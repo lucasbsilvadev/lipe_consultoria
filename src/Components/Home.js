@@ -41,11 +41,14 @@ const Home = () => {
     <div className="home-container" id="home" data-animate="fade-right" data-delay="200">
       <Navbar />
       <div className="home-banner-container" data-animate="fade-up" data-delay="200">
-        <div className="home-text-section">
-          <h1 className="primary-heading">
+       <h1 className="primary-heading">
             Junte-se ao time
             e transforme seu físico
           </h1>
+           <div className="home-image-section">
+          <img className="hero-image" src={BannerImage} alt="Luís Felipe Sabóia" />
+        </div>
+        <div className="home-text-section">
           <p className="primary-text">
             Consultoria esportiva de alto nível com Luís Sabóia, atleta e
             treinador com acompanhamento que vai do iniciante ao fisiculturista.
@@ -70,9 +73,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="home-image-section">
-          <img className="hero-image" src={BannerImage} alt="Luís Felipe Sabóia" />
-        </div>
+       
       </div>
     </div>
   );

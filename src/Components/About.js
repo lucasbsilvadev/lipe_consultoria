@@ -14,14 +14,19 @@ const About = () => {
     <section className="about-section-container" id="about" data-animate="fade-up" data-delay="200">
       <div className="section-container">
         <div className="about-section-content">
-          <div className="about-section-image-container">
-            <img src={AboutBackgroundImage} alt="Luís Felipe Sabóia - Atleta Wolfgang" />
-          </div>
-          <div className="about-section-text-container">
+  
             <p className="primary-subheading">Sobre</p>
+            
             <h1 className="primary-heading">
               Transformação além do físico
             </h1>
+            
+            <div className="about-section-image-container">
+            <img src={AboutBackgroundImage} alt="Luís Felipe Sabóia - Atleta Wolfgang" />
+          </div>
+          <div className="about-section-text-container">
+          
+            
             <p className="primary-text">
               Com metodologia científica e acompanhamento personalizado, Luís Sabóia desenvolve 
               atletas completos - fortes mentalmente e esteticamente evoluídos.
