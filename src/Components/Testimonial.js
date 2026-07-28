@@ -8,12 +8,12 @@ const Results = () => {
   const resultsData = [
     {
       image: BeforeAfter2,
-      name: "@buiserk",
+      name: "@",
       hashtag: "#TeamSaboia",
     },
     {
       image: BeforeAfter3,
-      name: "@lucena.lifts",
+      name: "@",
       hashtag: "#TeamSaboia",
     },
     {
@@ -23,7 +23,7 @@ const Results = () => {
     },
     {
       image: BeforeAfter5,
-      name: "@kayoclassicofc",
+      name: "@",
       hashtag: "#TeamSaboia",
     }
   ];
