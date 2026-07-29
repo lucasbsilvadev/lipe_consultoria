@@ -22,13 +22,9 @@ const About = () => {
           
           <div className="about-section-text-container">
             <p className="about-text">
-              Com metodologia científica e acompanhamento personalizado, Luís Sabóia desenvolve 
-              atletas completos - fortes mentalmente e esteticamente evoluídos.
+              Sou Luis Felipe Sabóia, profissional de Educação Física, atleta e treinador. Uno ciência do treinamento, periodização estratégica e dietética aplicada à <span className="Highlight">prática real — tanto na minha própria preparação quanto na evolução dos meus alunos. </span> 
             </p>
-            <p className="about-text">
-              Do iniciante ao atleta de alto rendimento, cada jornada é única e cada resultado 
-              é fruto de dedicação, técnica e paixão pelo esporte.
-            </p>
+          
             <div className="about-buttons-container">
               <button className="secondary-button" onClick={handleMetodologiaClick}>
                 Conheça a metodologia

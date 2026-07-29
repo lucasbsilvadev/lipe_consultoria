@@ -11,19 +11,19 @@ const Results = () => {
     {
       image: BeforeAfter2,
       type: "Atleta",
-      focus: "Objetivo:" + "Cutting",
+      focus: "Objetivo:" - "Cutting",
       hashtag: "#TeamSaboia"
     },
     {
       image: BeforeAfter3,
       type: "Atleta",
-      focus: "Objetivo:" + "Ganho de massa",
+      focus: "Objetivo:" - "Ganho de massa",
       hashtag: "#TeamSaboia"
     },
     {
       image: BeforeAfter4,
       type: "Aluna",
-      focus: "Objetivo:" + "Ganho de massa",
+      focus: "Objetivo:" - "Ganho de massa",
       hashtag: "#TeamSaboia",
     },
     {
