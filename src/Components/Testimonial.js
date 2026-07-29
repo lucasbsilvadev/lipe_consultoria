@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react"; // ← ADICIONE useCallback
 import BeforeAfter2 from "../Assets/buitrago_result.jpeg";
 import BeforeAfter3 from "../Assets/resultado_atleta3.jpeg";
 import BeforeAfter4 from "../Assets/resultado_fem.jpeg";
@@ -30,29 +30,29 @@ const Results = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Defina a função UMA VEZ só
+  const nextSlide = useCallback(() => {
+    setCurrentIndex(
+      (prevIndex) => prevIndex === resultsData.length - 1 ? 0 : prevIndex + 1
+    );
+  }, [resultsData.length]); 
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex(
+      (prevIndex) => prevIndex === 0 ? resultsData.length - 1 : prevIndex - 1
+    );
+  }, [resultsData.length]);
+
   // Carrossel automático
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000); // Muda a cada 5 segundos
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
-
-  const prevSlide = () => {
-    setCurrentIndex(
-      currentIndex === 0 ? resultsData.length - 1 : currentIndex - 1
-    );
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex(
-      currentIndex === resultsData.length - 1 ? 0 : currentIndex + 1
-    );
-  };
+  }, [nextSlide]);
 
   const handleCtaClick = () => {
-    // Abre WhatsApp com mensagem específica para resultados
     const message = encodeURIComponent("Olá! Quero ser o próximo resultado de sucesso do Team Saboia!");
     window.open(`https://wa.me/5561995909917?text=${message}`, '_blank');
   };
@@ -66,7 +66,6 @@ const Results = () => {
         </p>
       </div>
 
-      {/* Carrossel */}
       <div className="results-carousel">
         <button className="carousel-btn left" onClick={prevSlide}>
           {"<"}
@@ -86,7 +85,6 @@ const Results = () => {
         </button>
       </div>
 
-      {/* Indicadores */}
       <div className="carousel-indicators">
         {resultsData.map((_, index) => (
           <span
@@ -97,7 +95,6 @@ const Results = () => {
         ))}
       </div>
 
-      {/* CTA */}
       <div className="results-cta">
         <button className="cta-button" onClick={handleCtaClick}>
           QUERO SER O PRÓXIMO

@@ -12,7 +12,7 @@ const ScrollAnimationProvider = ({ children }) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               const element = entry.target;
-              const animationType = element.getAttribute('data-animate');
+          //  const animationType = element.getAttribute('data-animate');
               const delay = element.getAttribute('data-delay') || 0;
               
               // Aplica a classe de animação após o delay
