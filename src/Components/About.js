@@ -3,7 +3,6 @@ import AboutBackgroundImage from "../Assets/lipe_champion.jpg";
 
 const About = () => {
   const handleMetodologiaClick = () => {
-    // Leva para a seção de consultoria (work)
     const element = document.getElementById("work");
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -14,24 +13,19 @@ const About = () => {
     <section className="about-section-container" id="about" data-animate="fade-up" data-delay="200">
       <div className="section-container">
         <div className="about-section-content">
-  
-            <p className="primary-subheading">Sobre</p>
-            
-            <h1 className="primary-heading">
-              Transformação além do físico
-            </h1>
-            
-            <div className="about-section-image-container">
+          <p className="primary-subheading">Sobre</p>
+          <h1 className="about-heading">Transformação além do físico</h1>
+          
+          <div className="about-section-image-container">
             <img src={AboutBackgroundImage} alt="Luís Felipe Sabóia - Atleta Wolfgang" />
           </div>
-          <div className="about-section-text-container">
           
-            
-            <p className="primary-text">
+          <div className="about-section-text-container">
+            <p className="about-text">
               Com metodologia científica e acompanhamento personalizado, Luís Sabóia desenvolve 
               atletas completos - fortes mentalmente e esteticamente evoluídos.
             </p>
-            <p className="primary-text">
+            <p className="about-text">
               Do iniciante ao atleta de alto rendimento, cada jornada é única e cada resultado 
               é fruto de dedicação, técnica e paixão pelo esporte.
             </p>

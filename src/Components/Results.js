@@ -1,29 +1,48 @@
-import React, { useState, useEffect, useCallback } from "react"; // ← ADICIONE useCallback
-import BeforeAfter2 from "../Assets/buitrago_result.jpeg";
-import BeforeAfter3 from "../Assets/resultado_atleta3.jpeg";
-import BeforeAfter4 from "../Assets/resultado_fem.jpeg";
-import BeforeAfter5 from "../Assets/kayo_resultado.jpeg";
+import React, { useState, useEffect, useCallback } from "react"; 
+import BeforeAfter2 from "../Assets/results/buitrago_result.jpeg";
+import BeforeAfter3 from "../Assets/results/resultado_atleta3.jpeg";
+import BeforeAfter4 from "../Assets/results/resultado_fem.jpeg";
+import BeforeAfter5 from "../Assets/results/kayo_resultado.jpeg";
+import BeforeAfter6 from "../Assets/results/aluno_result.jpeg";
+import BeforeAfter7 from "../Assets/results/resultado_fem2.jpeg"
 
 const Results = () => {
   const resultsData = [
     {
       image: BeforeAfter2,
-      name: "@",
-      hashtag: "#TeamSaboia",
+      type: "Atleta",
+      focus: "Objetivo:" + "Cutting",
+      hashtag: "#TeamSaboia"
     },
     {
       image: BeforeAfter3,
-      name: "@",
-      hashtag: "#TeamSaboia",
+      type: "Atleta",
+      focus: "Objetivo:" + "Ganho de massa",
+      hashtag: "#TeamSaboia"
     },
     {
       image: BeforeAfter4,
-      name: "@",
+      type: "Aluna",
+      focus: "Objetivo:" + "Ganho de massa",
       hashtag: "#TeamSaboia",
     },
     {
       image: BeforeAfter5,
-      name: "@",
+      type: "Atleta",
+      focus: "Objetivo:" + "Preparação",
+      result: "Top 1",
+      hashtag: "#TeamSaboia",
+    },
+    {
+      image: BeforeAfter6,
+      type: "Atleta",
+      focus: "Objetivo:" + "Cutting",
+      hashtag: "#TeamSaboia",
+    },
+    {
+      image: BeforeAfter7,
+      type: "Atleta",
+      focus: "Objetivo:" + "Ganho de Massa",
       hashtag: "#TeamSaboia",
     }
   ];
@@ -47,7 +66,7 @@ const Results = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [nextSlide]);
@@ -76,7 +95,8 @@ const Results = () => {
             src={resultsData[currentIndex].image}
             alt={resultsData[currentIndex].name}
           />
-          <h2>{resultsData[currentIndex].name}</h2>
+          <h2>{resultsData[currentIndex].type}</h2>
+          <h3>{resultsData[currentIndex].focus}</h3>
           <p>{resultsData[currentIndex].hashtag}</p>
         </div>
 

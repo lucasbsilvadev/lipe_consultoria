@@ -1,10 +1,10 @@
 import React from "react";
-import AnamneseIcon from "../Assets/form.png";
-import AvaliacaoIcon from "../Assets/body_exam.png";
-import PlanejamentoIcon from "../Assets/training_routine.png";
-import AcompanhamentoIcon from "../Assets/followup.png";
-import SuporteIcon from "../Assets/support.png";
-import VideoIcon from "../Assets/videocall.png";
+import AnamneseIcon from "../Assets/work/form.png";
+import AvaliacaoIcon from "../Assets/work/body_exam.png";
+import PlanejamentoIcon from "../Assets/work/training_routine.png";
+import AcompanhamentoIcon from "../Assets/work/followup.png";
+import SuporteIcon from "../Assets/work/support.png";
+import VideoIcon from "../Assets/work/videocall.png";
 
 const Work = () => {
   const stepsData = [
@@ -43,9 +43,9 @@ const Work = () => {
   return (
     <div className="work-section-wrapper" id="work" data-animate="fade-up" data-delay="200">
       <div className="work-section-top">
-        <p className="primary-subheading">Consultoria</p>
-        <h1 className="primary-heading">Como funciona a consultoria</h1>
-        <p className="primary-text">
+        <p className="work-subheading">Consultoria</p>
+        <h1 className="work-title">Como funciona a consultoria</h1>
+        <p className="work-description">
           Passo a passo simples e objetivo para alcançar seus resultados com acompanhamento profissional.
         </p>
       </div>
@@ -55,8 +55,8 @@ const Work = () => {
             <div className="info-boxes-img-container">
               <img src={step.image} alt={step.title} />
             </div>
-            <h2>{step.title}</h2>
-            <p>{step.text}</p>
+            <h2 className="work-step-title">{step.title}</h2>
+            <p className="work-step-text">{step.text}</p>
           </div>
         ))}
       </div>

@@ -7,10 +7,11 @@ const Home = () => {
   const [counters, setCounters] = useState([
     { id: 1, value: 0, target: 10, text: "pódios como treinador", prefix: "+", suffix: "" },
     { id: 2, value: 0, target: 3, text: "atletas no TOP 1", prefix: "+", suffix: "" },
-    { id: 3, value: 0, target: 3, text: "Top 1 Men's Physique", prefix: "", suffix: "x" }
+    { id: 3, value: 0, target: 3, text: "Top 1 Men's Physique", prefix: "", suffix: "" }
   ]);
 
   useEffect(() => {
+
     const interval = setInterval(() => {
       setCounters(prevCounters => 
         prevCounters.map(counter => {
@@ -21,6 +22,7 @@ const Home = () => {
               value: Math.min(counter.value + increment, counter.target) 
             };
           }
+          
           return counter;
         })
       );
@@ -42,17 +44,19 @@ const Home = () => {
       <Navbar />
       <div className="home-banner-container" data-animate="fade-up" data-delay="200">
        <h1 className="primary-heading">
-            Junte-se ao time
-            e transforme seu físico
+            Junte-se à <span className="Highlight">equipe </span> 
+            e transforme <span className="Highlight"> seu físico </span> 
           </h1>
            <div className="home-image-section">
           <img className="hero-image" src={BannerImage} alt="Luís Felipe Sabóia" />
         </div>
         <div className="home-text-section">
+
           <p className="primary-text">
-            Consultoria esportiva de alto nível com Luís Sabóia, atleta e
-            treinador com acompanhamento que vai do iniciante ao fisiculturista.
+            Consultoria esportiva de <span className="Highlight">alto rendimento </span> com <span className="Highlight">Luís Sabóia,</span> atleta e
+            treinador com <span className="Highlight">acompanhamento especializado do iniciante ao fisiculturista.</span>
           </p>
+
           <button className="secondary-button" onClick={handleSaibaMaisClick}>
             Saiba mais <FiArrowRight />
           </button>
