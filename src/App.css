@@ -136,8 +136,8 @@ nav {
   font-weight: 800;
   line-height: 1.2;
   justify-self: start;
-  margin-left: 2rem; 
   margin-top: 2rem;
+  padding-left: 2rem;
 }
 
 .home-banner-container .primary-heading .Highlight {
@@ -182,6 +182,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-left: 2rem;
 }
 
 .primary-text {
@@ -190,13 +191,11 @@ nav {
   color: var(--wolfgang-white);
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  margin-left: 2rem; 
 }
 
 .secondary-button {
   margin-top: 2rem;
   grid-area: button;
-  margin-left: 2rem; 
   padding: 1rem 2.5rem;
   background-color: var(--wolfgang-blue);
   outline: none;
@@ -224,12 +223,12 @@ nav {
   font-size: 1.5rem;
 }
 
-/* .achievements-section {
+.achievements-section {
   grid-area: achievements;
   width: 100%;
   margin-top: 1rem;
   margin-left: 2rem; 
-} */
+}
 
 /* ABOUT SECTION */
 .about-section-container {
@@ -967,6 +966,8 @@ nav {
   line-height: 1.6;
   max-width: 300px;
   font-size: 0.95rem;
+  justify-content: center;
+  display: flex;
 }
 
 .footer-contact h4,
@@ -1065,6 +1066,8 @@ nav {
   gap: 2rem;
   max-width: 800px;
   margin: 0 auto;
+  padding: 3rem 0;
+  text-align: center;
 }
 
 .sponsor-item {
@@ -1671,8 +1674,9 @@ nav {
   }
 
   .home-text-section {
+    padding-left: 0 !important;
     align-items: center;
-    padding: 0 1rem;
+    text-align: center;
   }
 
   .home-image-section img {
@@ -1685,9 +1689,9 @@ nav {
     text-align: center;
   }
 
-  .primary-text {
+   .primary-text {
     text-align: center;
-    font-size: clamp(0.95rem, 3vw, 1.2rem);
+    margin-left: 0 !important;
   }
 
   .secondary-button {

@@ -81,8 +81,8 @@ const Footer = () => {
           <div className="footer-legal">
             <span>© 2024 Team Saboia. Todos os direitos reservados.</span>
             <div className="legal-links">
-              <a href="#privacy">Política de Privacidade</a>
-              <a href="#terms">Termos de Uso</a>
+              <a href="#powered-by">Powered by</a>
+              <a href="#liberstack">liberstack</a>
             </div>
           </div>
         </div>
