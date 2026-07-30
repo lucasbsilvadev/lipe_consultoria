@@ -313,9 +313,7 @@ const Contact = () => {
               </button>
             </div>
             
-            <p className="form-hint">
-              <small>📧 Seu formulário será enviado para nossa equipe.</small>
-            </p>
+            
           </form>
         </div>
       </div>
