@@ -5,9 +5,9 @@ import { FiArrowRight } from "react-icons/fi";
 
 const Home = () => {
   const [counters, setCounters] = useState([
-    { id: 1, value: 0, target: 10, text: "pódios como treinador", prefix: "+", suffix: "" },
+    { id: 1, value: 0, target: 20, text: "pódios como treinador", prefix: "+", suffix: "" },
     { id: 2, value: 0, target: 3, text: "atletas no TOP 1", prefix: "+", suffix: "" },
-    { id: 4, value: 0, target: 3, text: "Top 1 Men's Physique", prefix: "+", suffix: "x" }
+    { id: 3, value: 0, target: 4, text: "Top 1 Men's Physique", prefix: "+", suffix: "x" }
   ]);
 
   useEffect(() => {

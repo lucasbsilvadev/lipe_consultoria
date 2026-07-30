@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FiMessageSquare, FiPhone, FiMail, FiMapPin, FiUpload, FiCheckCircle, FiX } from "react-icons/fi";
+import { FiMessageSquare, FiPhone, FiMail, FiMapPin, FiUpload, FiCheckCircle, FiX, FiSend } from "react-icons/fi";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +15,7 @@ const Contact = () => {
 
   const [fotoPreview, setFotoPreview] = useState(null);
   const [toast, setToast] = useState({ show: false, message: "", type: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -26,7 +27,6 @@ const Contact = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Validar tamanho do arquivo (5MB)
       if (file.size > 5 * 1024 * 1024) {
         showToast("Arquivo muito grande! Máximo 5MB.", "error");
         return;
@@ -47,19 +47,14 @@ const Contact = () => {
 
   const generateWhatsAppMessage = () => {
     const { name, email, phone, altura, peso, lesao, objetivo } = formData;
-    const text = `*FORMULÁRIO DE ANAMNESE - TEAM SABOIA*\n\n` +
-      `*Dados Pessoais:*\n` +
-      `👤 Nome: ${name || "Não informado"}\n` +
-      `📧 Email: ${email || "Não informado"}\n` +
-      `📱 Telefone: ${phone || "Não informado"}\n\n` +
-      `*Dados Físicos:*\n` +
-      `📏 Altura: ${altura || "Não informado"}\n` +
-      `⚖️ Peso: ${peso || "Não informado"}\n\n` +
-      `*Informações Adicionais:*\n` +
-      `🏥 Lesão: ${lesao || "Nenhuma lesão informada"}\n` +
-      `🎯 Objetivo: ${objetivo || "Não informado"}\n\n` +
-      `📸 Fotos: Anexadas no formulário (ver anexos)\n\n` +
-      `Enviado através do formulário de anamnese.`;
+    const text = `*Nova Anamnese - Team Saboia*\n\n` +
+      `Nome: ${name || "Não informado"}\n` +
+      `Email: ${email || "Não informado"}\n` +
+      `Telefone: ${phone || "Não informado"}\n` +
+      `Altura: ${altura || "Não informado"}\n` +
+      `Peso: ${peso || "Não informado"}\n` +
+      `Lesão: ${lesao || "Nenhuma"}\n` +
+      `Objetivo: ${objetivo || "Não informado"}`;
     return encodeURIComponent(text);
   };
 
@@ -75,35 +70,80 @@ const Contact = () => {
     }, 4000);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Dados do formulário:", formData);
-    console.log("Arquivo:", formData.foto);
-    
-    showToast("✅ Formulário enviado com sucesso! Entraremos em contato em breve.", "success");
-    
-    // Resetar formulário
-    setTimeout(() => {
-      setFormData({ 
-        name: "", 
-        email: "", 
-        phone: "", 
-        altura: "", 
-        peso: "", 
-        lesao: "", 
-        objetivo: "",
-        foto: null 
+    setIsSubmitting(true);
+
+    try {
+      // 1. Enviar para Formspree (serviço gratuito)
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('altura', formData.altura);
+      formDataToSend.append('peso', formData.peso);
+      formDataToSend.append('lesao', formData.lesao);
+      formDataToSend.append('objetivo', formData.objetivo);
+      
+      // Se tiver foto, converte para base64 e envia
+      if (formData.foto) {
+        const reader = new FileReader();
+        const base64 = await new Promise((resolve) => {
+          reader.onload = () => resolve(reader.result);
+          reader.readAsDataURL(formData.foto);
+        });
+        formDataToSend.append('foto', base64);
+      }
+
+      const response = await fetch('https://formspree.io/f/xvzenzdb', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
-      setFotoPreview(null);
-    }, 300);
+
+      if (response.ok) {
+        showToast("✅ Formulário enviado com sucesso! Entraremos em contato em breve.", "success");
+        
+        // Abrir WhatsApp como complemento
+        setTimeout(() => {
+          handleWhatsAppClick();
+        }, 500);
+        
+        // Resetar formulário
+        setTimeout(() => {
+          setFormData({ 
+            name: "", 
+            email: "", 
+            phone: "", 
+            altura: "", 
+            peso: "", 
+            lesao: "", 
+            objetivo: "",
+            foto: null 
+          });
+          setFotoPreview(null);
+          setIsSubmitting(false);
+        }, 2000);
+      } else {
+        throw new Error('Erro ao enviar');
+      }
+
+    } catch (error) {
+      console.error('Erro:', error);
+      showToast("❌ Erro ao enviar. Tente novamente ou use o WhatsApp.", "error");
+      setIsSubmitting(false);
+    }
   };
 
-  return (
+   return (
     <div className="contact-page-wrapper" id="contact" data-animate="fade-right" data-delay="200">
       <div className="contact-container">
+        {/* HEADER CORRIGIDO */}
         <div className="contact-header">
-          <p className="primary-subheading">Anamnese</p>
-          <h1 className="primary-heading">Pronto para transformar seu físico?</h1>
+          <span className="primary-heading">Anamnese</span>
+          <h2 className="primary-subheading">Pronto para transformar seu físico?</h2>
           <p className="primary-text">
             Preencha o formulário de anamnese para uma avaliação completa e personalizada.
           </p>
@@ -150,7 +190,7 @@ const Contact = () => {
                 Falar diretamente no WhatsApp
               </button>
               <p className="whatsapp-hint">
-                Envie o formulário preenchido via WhatsApp
+         
               </p>
             </div>
           </div>
@@ -266,9 +306,16 @@ const Contact = () => {
               <p className="upload-hint">Formato: JPG, PNG (máx. 5MB)</p>
             </div>
 
-            <button type="submit" className="secondary-button">
-              Enviar Formulário
-            </button>
+            <div className="form-submit-wrapper">
+              <button type="submit" className="submit-button" disabled={isSubmitting}>
+                <FiSend />
+                {isSubmitting ? "Enviando..." : "Enviar Formulário"}
+              </button>
+            </div>
+            
+            <p className="form-hint">
+              <small>📧 Seu formulário será enviado para nossa equipe.</small>
+            </p>
           </form>
         </div>
       </div>

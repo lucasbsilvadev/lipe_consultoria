@@ -227,7 +227,6 @@ nav {
   grid-area: achievements;
   width: 100%;
   margin-top: 1rem;
-  margin-left: 2rem; 
 }
 
 /* ABOUT SECTION */
@@ -581,22 +580,66 @@ nav {
   padding: 0 2rem;
 }
 
+/* CORREÇÃO DO HEADER DO CONTACT - USANDO AS CLASSES EXISTENTES */
 .contact-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
+.contact-header .primary-subheading {
+  color: var(--wolfgang-blue);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
 .contact-header .primary-heading {
-  color: #131daa;
+  color: var(--wolfgang-dark);
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
   margin-bottom: 1rem;
 }
 
 .contact-header .primary-text {
   max-width: 600px;
   margin: 0 auto;
-  color: #6a6a6a;
+  color: var(--wolfgang-gray);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.6;
 }
 
+.contact-form .secondary-button {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  background: var(--wolfgang-blue);
+  color: white;
+  border: none;
+  border-radius: 5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.contact-form .secondary-button:hover {
+  background: var(--wolfgang-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(65, 13, 254, 0.3);
+}
+
+.contact-form .secondary-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -1674,7 +1717,7 @@ nav {
   }
 
   .home-text-section {
-    padding-left: 0 !important;
+    padding-left: 0 !important; 
     align-items: center;
     text-align: center;
   }
@@ -1737,7 +1780,7 @@ nav {
   
   /* Mantém o mesmo tamanho da Home */
   .about-section-image-container {
-    width: 280px;  /* ← Ajustado para igualar com Home */
+    width: 280px;  
     height: 370px;
   }
   
