@@ -10,46 +10,32 @@ const Results = () => {
   const resultsData = [
     {
       image: BeforeAfter2,
-      type: "Atleta",
-      focus: "Objetivo:" - "Cutting",
       hashtag: "#TeamSaboia"
     },
     {
       image: BeforeAfter3,
-      type: "Atleta",
-      focus: "Objetivo:" - "Ganho de massa",
       hashtag: "#TeamSaboia"
     },
     {
       image: BeforeAfter4,
-      type: "Aluna",
-      focus: "Objetivo:" - "Ganho de massa",
       hashtag: "#TeamSaboia",
     },
     {
       image: BeforeAfter5,
-      type: "Atleta",
-      focus: "Objetivo:" + "Preparação",
-      result: "Top 1",
       hashtag: "#TeamSaboia",
     },
     {
       image: BeforeAfter6,
-      type: "Atleta",
-      focus: "Objetivo:" + "Cutting",
       hashtag: "#TeamSaboia",
     },
     {
       image: BeforeAfter7,
-      type: "Atleta",
-      focus: "Objetivo:" + "Ganho de Massa",
       hashtag: "#TeamSaboia",
     }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Defina a função UMA VEZ só
   const nextSlide = useCallback(() => {
     setCurrentIndex(
       (prevIndex) => prevIndex === resultsData.length - 1 ? 0 : prevIndex + 1
@@ -62,7 +48,7 @@ const Results = () => {
     );
   }, [resultsData.length]);
 
-  // Carrossel automático
+  // carrossel automático
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();

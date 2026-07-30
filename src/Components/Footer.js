@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Seção de Patrocinadores */}
+        {/* seção de patrocinadores */}
         <div className="footer-sponsors">
           <h4>Parceiros Oficiais</h4>
           <div className="sponsors-grid">
@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom */}
+        {/* footer bottom */}
         <div className="footer-bottom">
           <div className="footer-legal">
             <span>© 2024 Team Saboia. Todos os direitos reservados.</span>

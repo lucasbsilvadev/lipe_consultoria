@@ -1,5 +1,5 @@
 import React from "react";
-import AboutBackgroundImage from "../Assets/lipe_champion.jpg";
+import AboutBackgroundImage from "../Assets/about/lipe_champion.jpg";
 
 const About = () => {
   const handleMetodologiaClick = () => {

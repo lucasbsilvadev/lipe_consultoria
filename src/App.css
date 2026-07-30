@@ -1249,6 +1249,79 @@ nav {
     gap: 0.8rem;
   }
   
+  /* CORREÇÃO DO BOTÃO DE ENVIO */
+
+/* Container do botão */
+.form-submit-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Botão de submit corrigido */
+.submit-button {
+  width: 100%;
+  max-width: 400px; /* Largura máxima para não ficar muito largo */
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #131daa 0%, #0f1780 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(19, 29, 170, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 auto; /* Centraliza */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(19, 29, 170, 0.4);
+  background: linear-gradient(135deg, #0f1780 0%, #0a0f66 100%);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Ajuste do upload group para dar espaçamento */
+.upload-group {
+  margin-bottom: 0.5rem;
+  border: 2px dashed #e8efff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  background: #f8f9ff;
+}
+
+/* Responsividade do botão */
+@media (max-width: 768px) {
+  .submit-button {
+    max-width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .form-submit-wrapper {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .submit-button {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
   .contact-form input,
   .contact-form textarea {
     padding: 0.8rem 1rem;
