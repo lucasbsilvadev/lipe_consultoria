@@ -587,12 +587,14 @@ nav {
 }
 
 .contact-header .primary-subheading {
-  color: var(--wolfgang-blue);
-  font-weight: 700;
-  font-size: 1.15rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  grid-area: heading;
+  font-size: clamp(2rem, 3.5vw, 4rem);
+  color: var(--wolfgang-white);
+  font-weight: 800;
+  line-height: 1.2;
+  justify-self: start;
+  margin-top: 2rem;
+  padding-left: 2rem;
 }
 
 .contact-header .primary-heading {
@@ -604,11 +606,11 @@ nav {
 }
 
 .contact-header .primary-text {
-  max-width: 600px;
-  margin: 0 auto;
-  color: var(--wolfgang-gray);
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  grid-area: paragraph;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: var(--wolfgang-white);
   line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .contact-form .secondary-button {
