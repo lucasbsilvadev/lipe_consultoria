@@ -1214,6 +1214,8 @@ nav {
   color: #fe9e0d;
 }
 
+
+
 /* RESPONSIVIDADE */
 @media (max-width: 1024px) {
   .footer-main {
@@ -1470,7 +1472,7 @@ nav {
 /* Botão de submit corrigido */
 .submit-button {
   width: 100%;
-  max-width: 400px; /* Largura máxima para não ficar muito largo */
+  max-width: 400px; 
   padding: 1.2rem 2.5rem;
   font-size: 1.1rem;
   font-weight: 700;

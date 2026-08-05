@@ -1,6 +1,8 @@
 import React from "react";
-import { FiInstagram, FiMail, FiPhone, FiMapPin } from "react-icons/fi";
+import { FiInstagram, FiPhone, FiMapPin } from "react-icons/fi";
 import { SiWhatsapp } from "react-icons/si";
+import logobulking from "../Assets/partners/bulking.png";
+import logoworld from "../Assets/partners/worldgym.png";
 
 const Footer = () => {
   return (
@@ -22,10 +24,6 @@ const Footer = () => {
             <div className="contact-item">
               <FiPhone />
               <span>+55 (61) 99590-9917</span>
-            </div>
-            <div className="contact-item">
-              <FiMail />
-              <span>contato@teamsaboia.com</span>
             </div>
             <div className="contact-item">
               <FiMapPin />
@@ -59,19 +57,29 @@ const Footer = () => {
         </div>
 
         {/* seção de patrocinadores */}
-        <div className="footer-sponsors">
+         <div className="footer-sponsors">
           <h4>Parceiros Oficiais</h4>
           <div className="sponsors-grid">
             <div className="sponsor-item">
-              <div className="sponsor-logo bulking">BULKING</div>
-              <p>Use cupom: <strong>SABOIA</strong></p>
+              <strong>Bulking - Roupas de Academia</strong>
+              <img 
+                src={logobulking} 
+                alt="Bulking Suplementos" 
+                className="sponsor-logo"
+              />
+              <p>Use o cupom: <strong>SABOIA</strong></p>
               <span>Suplementos de qualidade</span>
             </div>
             
             <div className="sponsor-item">
-              <div className="sponsor-logo php">PHP NUTRITION</div>
-              <p>Suplementos premium</p>
-              <span>Alta performance</span>
+              <strong>World Gym - Sobradinho</strong>
+              <img 
+                src={logoworld} 
+                alt="World Gym" 
+                className="sponsor-logo"
+              />
+              <p> Acesse agora nosso canal no youtube! </p> 
+              <span>Junte-se ao time e <strong> ganhe desconto na matrícula</strong></span>
             </div>
           </div>
         </div>
@@ -79,7 +87,7 @@ const Footer = () => {
         {/* footer bottom */}
         <div className="footer-bottom">
           <div className="footer-legal">
-            <span>© 2024 Team Saboia. Todos os direitos reservados.</span>
+            <span>© 2026 Team Saboia. Todos os direitos reservados.</span>
             <div className="legal-links">
               <a href="#powered-by">Powered by</a>
               <a href="#liberstack">liberstack</a>

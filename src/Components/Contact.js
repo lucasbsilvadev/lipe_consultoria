@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FiMessageSquare, FiPhone, FiMail, FiMapPin, FiUpload, FiCheckCircle, FiX, FiSend } from "react-icons/fi";
+import { FiMessageSquare, FiInstagram, FiPhone, FiMail, FiMapPin, FiUpload, FiCheckCircle, FiX, FiSend } from "react-icons/fi";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -163,11 +163,11 @@ const Contact = () => {
 
             <div className="info-item">
               <div className="info-icon">
-                <FiMail />
+                <FiInstagram />
               </div>
               <div className="info-content">
-                <h3>Email</h3>
-                <p>contato@teamsaboia.com</p>
+                <h3>Instagram</h3>
+                <p >@luissaboia.ofc</p>
               </div>
             </div>
 

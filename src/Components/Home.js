@@ -32,7 +32,6 @@ const Home = () => {
   }, []);
 
   const handleSaibaMaisClick = () => {
-    // Leva para a seção de consultoria
     const element = document.getElementById("work");
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -61,7 +60,7 @@ const Home = () => {
             Saiba mais <FiArrowRight />
           </button>
 
-          {/* Seção de Indicadores */}
+          {/* seção de indicadores */}
           <div className="achievements-section">
             <div className="achievements-grid">
               {counters.map(counter => (
