@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FiMessageSquare, FiInstagram, FiPhone, FiMail, FiMapPin, FiUpload, FiCheckCircle, FiX, FiSend } from "react-icons/fi";
+import { FiMessageSquare, FiInstagram, FiPhone, FiMapPin, FiUpload, FiCheckCircle, FiX, FiSend } from "react-icons/fi";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -75,7 +75,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // 1. Enviar para Formspree (serviço gratuito)
+      //  Enviar via Formspree 
       const formDataToSend = new FormData();
       formDataToSend.append('name', formData.name);
       formDataToSend.append('email', formData.email);
