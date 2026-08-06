@@ -1149,6 +1149,7 @@ nav {
   border-radius: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 2rem;
 }
 
 .sponsor-logo.bulking {
@@ -1178,7 +1179,7 @@ nav {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.85rem;
   display: block;
-  margin-top: 0.25rem;
+  margin-top: 3rem;
 }
 
 /* FOOTER BOTTOM */
@@ -1320,7 +1321,7 @@ nav {
   }
   
   .sponsor-logo {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   
   .social-icon {

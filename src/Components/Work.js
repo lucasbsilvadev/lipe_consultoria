@@ -43,7 +43,6 @@ const Work = () => {
   return (
     <div className="work-section-wrapper" id="work" data-animate="fade-up" data-delay="200">
       <div className="work-section-top">
-        <p className="work-subheading">Consultoria</p>
         <h1 className="work-title">Como funciona a consultoria</h1>
         <p className="work-description">
           Passo a passo simples e objetivo para alcançar seus resultados com acompanhamento profissional.

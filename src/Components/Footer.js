@@ -2,7 +2,7 @@ import React from "react";
 import { FiInstagram, FiPhone, FiMapPin } from "react-icons/fi";
 import { SiWhatsapp } from "react-icons/si";
 import logobulking from "../Assets/partners/bulking.png";
-import logoworld from "../Assets/partners/worldgym.png";
+import logoworld from "../Assets/partners/logowg.png";
 
 const Footer = () => {
   return (
