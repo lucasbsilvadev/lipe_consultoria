@@ -61,14 +61,14 @@ const Footer = () => {
           <h4>Parceiros Oficiais</h4>
           <div className="sponsors-grid">
             <div className="sponsor-item">
-              <strong>Bulking - Roupas de Academia</strong>
+              <strong>Bulking - Roupas </strong>
               <img 
                 src={logobulking} 
                 alt="Bulking Suplementos" 
                 className="sponsor-logo"
               />
               <p>Use o cupom: <strong>SABOIA</strong></p>
-              <span>Suplementos de qualidade</span>
+              <span>Roupas de academia - Fashion Fitness</span>
             </div>
             
             <div className="sponsor-item">
@@ -78,7 +78,6 @@ const Footer = () => {
                 alt="World Gym" 
                 className="sponsor-logo"
               />
-              <p> Acesse agora nosso canal no youtube! </p> 
               <span>Junte-se ao time e <strong> ganhe desconto na matrícula</strong></span>
             </div>
           </div>
