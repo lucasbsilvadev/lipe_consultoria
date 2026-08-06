@@ -10,6 +10,9 @@ const Contact = () => {
     peso: "",
     lesao: "",
     objetivo: "",
+    dias_por_semana: "",   
+    tempo_por_dia: "",      
+    sugestao: "",           
     foto: null
   });
 
@@ -46,7 +49,7 @@ const Contact = () => {
   };
 
   const generateWhatsAppMessage = () => {
-    const { name, email, phone, altura, peso, lesao, objetivo } = formData;
+    const { name, email, phone, altura, peso, lesao, objetivo, dias_por_semana, tempo_por_dia, sugestao } = formData;
     const text = `*Nova Anamnese - Team Saboia*\n\n` +
       `Nome: ${name || "Não informado"}\n` +
       `Email: ${email || "Não informado"}\n` +
@@ -54,7 +57,10 @@ const Contact = () => {
       `Altura: ${altura || "Não informado"}\n` +
       `Peso: ${peso || "Não informado"}\n` +
       `Lesão: ${lesao || "Nenhuma"}\n` +
-      `Objetivo: ${objetivo || "Não informado"}`;
+      `Objetivo: ${objetivo || "Não informado"}\n` +
+      `Dias por semana: ${dias_por_semana || "Não informado"}\n` +  
+      `Tempo por dia: ${tempo_por_dia || "Não informado"}\n` +      
+      `Sugestão: ${sugestao || "Nenhuma"}`;                         
     return encodeURIComponent(text);
   };
 
@@ -75,7 +81,6 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      //  Enviar via Formspree 
       const formDataToSend = new FormData();
       formDataToSend.append('name', formData.name);
       formDataToSend.append('email', formData.email);
@@ -84,8 +89,10 @@ const Contact = () => {
       formDataToSend.append('peso', formData.peso);
       formDataToSend.append('lesao', formData.lesao);
       formDataToSend.append('objetivo', formData.objetivo);
+      formDataToSend.append('dias_por_semana', formData.dias_por_semana);    
+      formDataToSend.append('tempo_por_dia', formData.tempo_por_dia);        
+      formDataToSend.append('sugestao', formData.sugestao);                
       
-      // Se tiver foto, converte para base64 e envia
       if (formData.foto) {
         const reader = new FileReader();
         const base64 = await new Promise((resolve) => {
@@ -106,12 +113,10 @@ const Contact = () => {
       if (response.ok) {
         showToast("✅ Formulário enviado com sucesso! Entraremos em contato em breve.", "success");
         
-        // Abrir WhatsApp como complemento
         setTimeout(() => {
           handleWhatsAppClick();
         }, 500);
         
-        // Resetar formulário
         setTimeout(() => {
           setFormData({ 
             name: "", 
@@ -121,6 +126,9 @@ const Contact = () => {
             peso: "", 
             lesao: "", 
             objetivo: "",
+            dias_por_semana: "",    
+            tempo_por_dia: "",    
+            sugestao: "",           
             foto: null 
           });
           setFotoPreview(null);
@@ -137,10 +145,9 @@ const Contact = () => {
     }
   };
 
-   return (
+  return (
     <div className="contact-page-wrapper" id="contact" data-animate="fade-right" data-delay="200">
       <div className="contact-container">
-        {/* HEADER CORRIGIDO */}
         <div className="contact-header">
           <span className="primary-heading">Anamnese</span>
           <h2 className="primary-subheading">Pronto para transformar seu físico?</h2>
@@ -167,7 +174,7 @@ const Contact = () => {
               </div>
               <div className="info-content">
                 <h3>Instagram</h3>
-                <p >@luissaboia.ofc</p>
+                <p>@luissaboia.ofc</p>
               </div>
             </div>
 
@@ -189,9 +196,6 @@ const Contact = () => {
                 <FiMessageSquare />
                 Falar diretamente no WhatsApp
               </button>
-              <p className="whatsapp-hint">
-         
-              </p>
             </div>
           </div>
 
@@ -276,6 +280,39 @@ const Contact = () => {
               ></textarea>
             </div>
 
+            <div className="form-group">
+              <textarea
+                name="dias_por_semana"
+                placeholder="Quantos dias por semana você consegue se dedicar para academia?"
+                rows="2"
+                value={formData.dias_por_semana}
+                onChange={handleInputChange}
+                required
+              ></textarea>
+            </div>
+
+            <div className="form-group">
+              <textarea
+                name="tempo_por_dia"
+                placeholder="Quanto tempo por dia você consegue se dedicar para academia?"
+                rows="2"
+                value={formData.tempo_por_dia}
+                onChange={handleInputChange}
+                required
+              ></textarea>
+            </div>
+
+            <div className="form-group">
+              <textarea
+                name="sugestao"
+                placeholder="Deixe sua sugestão ou algum detalhe que possa ajudar a ser mais assertivo na montagem do seu planejamento."
+                rows="3"
+                value={formData.sugestao}
+                onChange={handleInputChange}
+                required
+              ></textarea>
+            </div>
+
             <div className="form-group upload-group">
               <label className="upload-label">
                 <FiUpload className="upload-icon" />
@@ -312,8 +349,6 @@ const Contact = () => {
                 {isSubmitting ? "Enviando..." : "Enviar Formulário"}
               </button>
             </div>
-            
-            
           </form>
         </div>
       </div>
