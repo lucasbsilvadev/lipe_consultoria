@@ -21,7 +21,7 @@ const Work = () => {
     {
       image: PlanejamentoIcon,
       title: "Planejamento personalizado",
-      text: "Treino e dieta feitos sob medida para os seus objetivos.",
+      text: "Treino e sugestão alimentar.",
     },
     {
       image: AcompanhamentoIcon,
